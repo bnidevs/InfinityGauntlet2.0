@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200px" height="78px" viewBox="0 0 200 78" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55 (78076) - https://sketchapp.com -->
+    <title>Artboard</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <radialGradient cx="49.1985441%" cy="86.2064824%" fx="49.1985441%" fy="86.2064824%" r="119.634858%" gradientTransform="translate(0.491985,0.862065),scale(0.350000,1.000000),rotate(81.980188),translate(-0.491985,-0.862065)" id="radialGradient-1">
+            <stop stop-color="#C9C9C9" offset="0%"></stop>
+            <stop stop-color="#504949" offset="100%"></stop>
+        </radialGradient>
+        <radialGradient cx="49.1164497%" cy="85.1908041%" fx="49.1164497%" fy="85.1908041%" r="128.543802%" gradientTransform="translate(0.491164,0.851908),scale(0.276042,1.000000),rotate(88.573167),translate(-0.491164,-0.851908)" id="radialGradient-2">
+            <stop stop-color="#B1E9B2" offset="0%"></stop>
+            <stop stop-color="#5DD041" offset="100%"></stop>
+        </radialGradient>
+        <radialGradient cx="50%" cy="100%" fx="50%" fy="100%" r="125.41445%" gradientTransform="translate(0.500000,1.000000),scale(0.276042,1.000000),rotate(61.799352),translate(-0.500000,-1.000000)" id="radialGradient-3">
+            <stop stop-color="#A5E5A1" offset="0%"></stop>
+            <stop stop-color="#5DD041" offset="100%"></stop>
+        </radialGradient>
+        <radialGradient cx="50.9448382%" cy="-10.5427354%" fx="50.9448382%" fy="-10.5427354%" r="108.399975%" gradientTransform="translate(0.509448,-0.105427),scale(0.280488,1.000000),rotate(90.000000),translate(-0.509448,0.105427)" id="radialGradient-4">
+            <stop stop-color="#FFFFFF" stop-opacity="0.5" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" stop-opacity="0.545317963" offset="100%"></stop>
+        </radialGradient>
+        <radialGradient cx="51.0330231%" cy="43.7269656%" fx="51.0330231%" fy="43.7269656%" r="100%" gradientTransform="translate(0.510330,0.437270),scale(0.286667,1.000000),rotate(90.000000),translate(-0.510330,-0.437270)" id="radialGradient-5">
+            <stop stop-color="#CDCDCD" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" offset="100%"></stop>
+        </radialGradient>
+    </defs>
+    <g id="Artboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <ellipse id="Oval" stroke="#979797" fill="url(#radialGradient-1)" cx="100" cy="43" rx="100" ry="35"></ellipse>
+        <ellipse id="Oval" stroke="url(#radialGradient-3)" fill="url(#radialGradient-2)" cx="100" cy="34.5" rx="96" ry="26.5"></ellipse>
+        <ellipse id="Oval" fill="url(#radialGradient-4)" cx="100" cy="23" rx="82" ry="23"></ellipse>
+        <ellipse id="Oval" stroke="#FFFFFF" fill="url(#radialGradient-5)" cx="100" cy="21.5" rx="75" ry="21.5"></ellipse>
+    </g>
+</svg>
