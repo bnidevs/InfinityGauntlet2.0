@@ -27,7 +27,7 @@ void arrSetupCreds(){
 
 void creditsSetup(){
   credits1 = "Infinity Gauntlet Demo";
-  credits2 = "Developers: Bill   Ni\n            Kevin  Cheng\n            Harris Miller\n            Alex   Liu";
+  credits2 = "Developers: Bill    Ni\n                 Kevin  Cheng\n                 Harris Miller\n                 Alex   Liu";
 }
 
 void arrDrawCreds(){
@@ -45,8 +45,8 @@ void arrDrawCreds(){
 void creditsDraw(){
   textFont(buttonFont); //see menu for font type
   fill(priTextColor);
-  textSize(14);
   textAlign(CENTER);
+  textSize(25);
   text(credits1,width/2,200);
   textAlign(LEFT);
   text(credits2,190,250);

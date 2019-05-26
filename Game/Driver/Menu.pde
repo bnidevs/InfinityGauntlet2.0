@@ -27,7 +27,7 @@ void txtDraw(){
 }
 
 void titleDraw(){
-  image(titleLogo, displaceMenu + 250, 50);
+  image(titleLogo, 120, 50, 420, 300);
 }
 
 void buttonHover(){
@@ -89,5 +89,5 @@ void colorSetup(){
 }
 
 void fontSetup(){
-  buttonFont = createFont("ARCADE_R.ttf", 10);
+  buttonFont = createFont("Azedo-Bold.otf", 17);
 }

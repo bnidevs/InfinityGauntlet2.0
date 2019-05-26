@@ -21,13 +21,13 @@ class Button {
 
   PImage makeButton() {
     if(type == 0){
-      return loadImage("g.png");
+      return GRNBTT;
     } else if(type == 1) {
-      return loadImage("r.png");
+      return REDBTT;
     } else if(type == 2) {
-      return loadImage("y.png");
+      return YLWBTT;
     } else {
-      return loadImage("b.png");
+      return BLUBTT;
     }
   }
 }

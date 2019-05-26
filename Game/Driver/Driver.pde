@@ -5,9 +5,29 @@ final int PLAY = 3;
 final int DIFFMENU = 4;
 final int ENDGAME = 5;
 
+PImage REDBTT;
+PImage GRNBTT;
+PImage YLWBTT;
+PImage BLUBTT;
+
+PImage REDHOL;
+PImage GRNHOL;
+PImage YLWHOL;
+PImage BLUHOL;
+
 int status = MENU;
 
 void setup(){
+  REDBTT = loadImage("r.png");
+  GRNBTT = loadImage("g.png");
+  YLWBTT = loadImage("y.png");
+  BLUBTT = loadImage("b.png");
+  
+  REDHOL = loadImage("rhole.png");
+  GRNHOL = loadImage("ghole.png");
+  YLWHOL = loadImage("yhole.png");
+  BLUHOL = loadImage("bhole.png");
+  
   size(700,500);
   textAlign(LEFT);
   // MENU SETUP

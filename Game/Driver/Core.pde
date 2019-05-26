@@ -256,7 +256,7 @@ void displayScore() {
   } else {
     text(_score,565 - 10 * floor(log(abs(_score)) / log(10) + 1),70);
   }
-  textSize(25);
+  textSize(20);
   if (word.equals("FLAWLESS")) 
     fill(color(96,0,193)); //purple
   else if (word.equals("PERFECT")) 
@@ -275,5 +275,5 @@ void displayScore() {
     fill(color(255,104,0)); //red-orange
   else if (word.equals("MISS")) 
     fill(color(250,64,24)); //red
-  text(word, 470, 300);
+  text(word, 500, 150);
 }

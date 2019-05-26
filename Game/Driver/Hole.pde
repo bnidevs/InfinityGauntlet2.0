@@ -13,13 +13,13 @@ class Hole{
   public Hole(int id){
     type = id;
     if(type == 0){
-      img = loadImage("ghole.png");
+      img = GRNHOL;
     }else if(type == 1){
-      img = loadImage("rhole.png");
+      img = REDHOL;
     }else if(type == 2){
-      img = loadImage("yhole.png");
+      img = YLWHOL;
     }else{
-      img = loadImage("bhole.png");
+      img = BLUHOL;
     }
   }
   

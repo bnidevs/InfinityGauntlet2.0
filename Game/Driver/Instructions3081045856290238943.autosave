@@ -25,7 +25,7 @@ void arrSetupInst(){
 }
 
 void instructSetup(){
-  instructions = "        Use WASD or the Infinity Gauntlet 2.0™\nto play the guitar.\n\nUse mouse to navigate menus.";
+  instructions = "Use corresponding finger buttons to perform guitar strokes. \n                  Use mouse to navigate menus.";
 }
 
 void arrDrawInst(){
@@ -43,7 +43,5 @@ void arrDrawInst(){
 void instructDraw(){
   textFont(buttonFont); //see menu for font type
   fill(priTextColor);
-  textAlign(CENTER);
-  textSize(25);
-  text(instructions,width/2,height/2);
+  text(instructions,130,230);
 }
