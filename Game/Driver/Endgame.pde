@@ -1,6 +1,6 @@
 String endTitleText;
 
-int[] scoreTypeContainer = new int[9];
+int[] scoreTypeContainer = new int[10];
 
 String restartText;
 PShape restartButton;
@@ -42,29 +42,32 @@ void scoreSetup(){
 }
 
 void scoreDraw(){
-  textFont(buttonFont);
+    PFont scoreFont = createFont("ARCADE_R.ttf",20);
+    textFont(scoreFont);
+    textSize(12);
   fill(priTextColor);
   text(gameOverScore,400,110);
-  
-  for(int i = 0; i < 9; i++){
+  for(int i = 0; i < 10; i++){
     if(i == 0){
-      text("Flawless: " + scoreTypeContainer[i],400, 155 + i * 20);
+      text("Flawless:    " + scoreTypeContainer[i],400, 155 + i * 20);
     }else if(i == 1){
-      text("Perfect: " + scoreTypeContainer[i],400, 155 + i * 20);
+      text("Perfect:     " + scoreTypeContainer[i],400, 155 + i * 20);
     }else if(i == 2){
-      text("Excellent: " + scoreTypeContainer[i],400, 155 + i * 20);
+      text("Excellent:   " + scoreTypeContainer[i],400, 155 + i * 20);
     }else if(i == 3){
-      text("Great: " + scoreTypeContainer[i],400, 155 + i * 20);
+      text("Great:       " + scoreTypeContainer[i],400, 155 + i * 20);
     }else if(i == 4){
-      text("Good: " + scoreTypeContainer[i],400, 155 + i * 20);
+      text("Good:        " + scoreTypeContainer[i],400, 155 + i * 20);
     }else if(i == 5){
-      text("OK: " + scoreTypeContainer[i],400, 155 + i * 20);
+      text("OK:          " + scoreTypeContainer[i],400, 155 + i * 20);
     }else if(i == 6){
-      text("Almost: " + scoreTypeContainer[i],400, 155 + i * 20);
+      text("Almost:      " + scoreTypeContainer[i],400, 155 + i * 20);
     }else if(i == 7){
-      text("Bad: " + scoreTypeContainer[i],400, 155 + i * 20);
+      text("Bad:         " + scoreTypeContainer[i],400, 155 + i * 20);
     }else if(i == 8){
-      text("Miss: " + scoreTypeContainer[i],400, 155 + i * 20);
+      text("Miss:        " + scoreTypeContainer[i],400, 155 + i * 20);
+    }else if(i == 9){
+      text("Max Streak:  " + scoreTypeContainer[i],400, 155 + (i+1) * 20);
     }
   }
 }

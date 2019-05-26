@@ -58,6 +58,8 @@ void setup(){
   //END SETUP
   endTitleSetup();
   restartSetup();
+  
+  frameRate(60);
 }
 
 void draw(){
@@ -128,16 +130,13 @@ void mouseClicked(){
     if(mouseY > 240 && mouseY < 260){
       difficulty = 0;
       loadSong("EyeOfTheTiger");
-      //endCt = 50;
       status = PLAY;
     }else if(mouseY > 270 && mouseY < 290){
       difficulty = 1;
       loadSong("IronMan");
-      //endCt = 150;
       status = PLAY;
     }else if(mouseY > 300 && mouseY < 320){
       difficulty = 2;
-      //endCt = 250;
       status = PLAY;
     }
   }
@@ -145,7 +144,7 @@ void mouseClicked(){
   if(status == ENDGAME && mouseX > 160 && mouseX < 340 && mouseY > 300 && mouseY < 320){
     status = DIFFMENU;
     _score = 0;
-    scoreTypeContainer = new int[9];
+    scoreTypeContainer = new int[10];
     ctr = 0;
     word = "";
   }

@@ -21,9 +21,12 @@ int yPos = 0;
 float wE = 30;
 float hE = 20;
 float shift = 0;
+double speed = 1.3;
 
 int difficulty;
 int endCt;
+
+int streak = 0;
 
 void coreSetup(){
   //size(700,500);
@@ -107,7 +110,7 @@ void arrowDraw(){
     } else{
       image(b.buttonShape, width/2+3*(b.ellOffset+b.shift)- (b.wE/2), b.yPos - b.hE, b.wE, b.hE);
     }
-    b.yPos+=1.3;
+    b.yPos+=speed;
     b.shift+=0.063;
     b.wE+=0.06;
     b.hE+=0.04;
@@ -199,47 +202,57 @@ void score(int pos) {
     _score += 7; //flawless 
     word = "FLAWLESS"; 
     scoreTypeContainer[0]++;
+    streak++;
   }
   else if (ydiff < 5) {
     _score += 6; //perfect
     word = "PERFECT";
     scoreTypeContainer[1]++;
+    streak++;
   }
   else if (ydiff < 10) {
     _score += 5; //excellent
     word = "EXCELLENT";
     scoreTypeContainer[2]++;
+    streak++;
   }
   else if (ydiff < 15) {
     _score += 4; //great
     word = "GREAT";
     scoreTypeContainer[3]++;
+    streak++;
   }
   else if (ydiff < 20) {
     _score += 3; //good 
     word = "GOOD";
     scoreTypeContainer[4]++;
+    streak++;
   }
   else if (ydiff < 25) {
     _score += 2; //okay
     word = "OK";
     scoreTypeContainer[5]++;
+    streak=0;
   }
   else if (ydiff < 30) {
     _score += 1; //almost
     word = "ALMOST";
     scoreTypeContainer[6]++;
+    streak=0;
   }
   else if (ydiff < 35) {
     _score -= 1; //bad
     word = "BAD";
     scoreTypeContainer[7]++;
+    streak=0;
   }
   else {
     _score -= 2; //miss
     word = "MISS";
     scoreTypeContainer[8]++;
+    streak=0;
   }
+  if(streak > scoreTypeContainer[9]) scoreTypeContainer[9] = streak;
   println(_score);
 }
 
@@ -276,4 +289,11 @@ void displayScore() {
   else if (word.equals("MISS")) 
     fill(color(250,64,24)); //red
   text(word, 500, 150);
+  
+  if(streak > 2)
+    fill(constrain(10*streak,0,255));
+  else
+    fill(0);
+  text("Streak: ", 20,40); 
+  text(streak, 70 - 10 * floor(log(_score) / log(10)),70);
 }
