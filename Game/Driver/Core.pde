@@ -66,6 +66,7 @@ void coreDraw(){
       played = true;
     }
   }
+  
   background(backgroundcolor);
   displayScore();
   g.stringDraw();
@@ -172,22 +173,22 @@ void addMove(){
     moves.add("a");
     Button temp = new Button(width/2-3*(ellOffset+shift), 0, 0);
     moveBtts.add(temp);
-  }else if(s.equals("w")){
-    moves.add("w");
-    Button temp = new Button(width/2-(ellOffset+shift), 0, 1);
-    moveBtts.add(temp);
   }else if(s.equals("s")){
     moves.add("s");
-    Button temp = new Button(width/2+(ellOffset+shift), 0, 2);
+    Button temp = new Button(width/2-(ellOffset+shift), 0, 1);
     moveBtts.add(temp);
   }else if(s.equals("d")){
     moves.add("d");
+    Button temp = new Button(width/2+(ellOffset+shift), 0, 2);
+    moveBtts.add(temp);
+  }else if(s.equals("f")){
+    moves.add("f");
     Button temp = new Button(width/2+3*(ellOffset+shift), 0, 3);
     moveBtts.add(temp);
   }
 }
 
-void removeMove(int pos){
+void beginRemove(int pos, boolean trigger){
   score(pos);
   moves.remove(pos);
   moveBtts.remove(pos);
@@ -195,8 +196,10 @@ void removeMove(int pos){
 
 void keyPressed(){
   int pos = find(key + "", moves);
-  if(pos != -1){
-    removeMove(pos);
+  if(pos != -1 && moveBtts.get(pos).yPos > 430){
+    beginRemove(pos, true);
+  }else{
+    return;
   }
 }
 
@@ -214,7 +217,7 @@ int find(String x, ArrayList<String> arr){
 
 void checkMove(){
   if(moveBtts.get(0).yPos > 510){
-    removeMove(0);
+    beginRemove(0, false);
   }
 }
 void score(int pos) {
@@ -270,7 +273,7 @@ void score(int pos) {
     scoreTypeContainer[7]++;
     streak=0;
   }
-  else {
+  else if (ydiff < 50){
     _score -= 2; //miss
     word = "MISS";
     scoreTypeContainer[8]++;

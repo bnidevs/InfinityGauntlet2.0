@@ -133,7 +133,7 @@ void diffMenuTitleSetup(){
 }
 
 void diffDescSetup(){
-  ezDesc = "Eye of the Tiger, X BPM";
-  medDesc = "Iron Man, Y BPM";
-  hrdDesc = "???, Z BPM";
+  ezDesc = "Eye of the Tiger, 116 BPM";
+  medDesc = "Iron Man, 144 BPM";
+  hrdDesc = "Through the Fire and Flames, 200 BPM";
 }
