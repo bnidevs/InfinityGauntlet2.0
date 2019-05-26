@@ -164,7 +164,7 @@ void count(){
 }
 
 void checkMove(){
-  if(moveBtts.get(0).ycor > 510){
+  if(moveBtts.get(0).yPos > 510){
     removeMove(0);
   }
 }
@@ -224,12 +224,16 @@ void score(int pos) {
 void displayScore() {
   color g = color(96,0,193);
   fill(g);
-  rect(450,50,200,100);
+  rect(470,15,220,65);
   PFont scoreFont = createFont("ARCADE_R.ttf",20);
   textFont(scoreFont);
   fill(0);
-  text("score: ", 500,90); 
-  text(_score,540 - 10 * floor(log(_score) / log(10)),125);
+  text("score: ", 525,45); 
+  if(_score > 0){
+    text(_score,565 - 10 * floor(log(_score) / log(10)),70);
+  } else {
+    text(_score,565 - 10 * floor(log(abs(_score)) / log(10) + 1),70);
+  }
   textSize(25);
   if (word.equals("FLAWLESS")) 
     fill(color(96,0,193)); //purple
