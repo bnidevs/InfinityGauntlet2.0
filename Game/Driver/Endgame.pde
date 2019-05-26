@@ -18,7 +18,7 @@ void endTitleDraw(){
 }
 
 void restartSetup(){
-  restartText = "Restart";
+  restartText = "Select Level";
   
   restartButton = createShape(RECT, 160, 300, 180, 20);
 }
@@ -34,7 +34,7 @@ void restartDraw(){
   
   textFont(buttonFont);
   fill(priTextColor);
-  text(restartText, 215, 315);
+  text(restartText, 200, 315);
 }
 
 void scoreSetup(){

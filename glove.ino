@@ -18,23 +18,47 @@ void setup()
 void loop()
 {
   if(analogRead(A0) > 800){ // middle
-    Serial.println("middle");
-    Keyboard.write('W');
+    middle = true;
+  }else{
+    middle = false;
   }
+  if(middle == false and middlep == true){
+    Serial.println("middle");
+    Keyboard.write('s');
+  }
+  middlep = middle;
   
   if(analogRead(A1) > 800){ // index
-    Serial.println("index");
-    Keyboard.write('A');
+    index = true;
+  }else{
+    index = false;
   }
+  if(index == false and indexp == true){
+    Serial.println("index");
+    Keyboard.write('d');
+  }
+  indexp = index;
   
   if(analogRead(A2) > 800){ // pinky
-    Serial.println("pinky");
-    Keyboard.write('S');
+    pinky = true;
+  }else{
+    pinky = false;
   }
+  if(pinky == false and pinkyp == true){
+    Serial.println("pinky");
+    Keyboard.write('a');
+  }
+  pinkyp = pinky;
   
   if(analogRead(A3) > 800){ // ring
-    Serial.println("ring");
-    Keyboard.write('D');
+    ring = true;
+  }else{
+    ring = false;
   }
+  if(ring == false and ringp == true){
+    Serial.println("ring");
+    Keyboard.write('w');
+  }
+  ringp = ring;
   
 }

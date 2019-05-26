@@ -6,7 +6,7 @@ import java.util.Scanner;
 Hole[] matchHs; //four arrows on top left corner
 ArrayList<String> moves; //wasd coordination of moves
 ArrayList<Button> moveBtts;
-int ctr;
+long ctr;
 int _score;
 color backgroundcolor;
 String word;
@@ -22,6 +22,10 @@ float wE = 30;
 float hE = 20;
 float shift = 0;
 double speed = 1.3;
+PFont scoreFont;
+
+long cmtime = 0;
+boolean played = false;
 
 int difficulty;
 int endCt;
@@ -38,9 +42,24 @@ void coreSetup(){
   arrowDraw();
   word = "";  
   g = new guitar_driver();
+  scoreFont = createFont("ARCADE_R.ttf",20);
 }
 
 void coreDraw(){
+  if(cmtime == 0){
+    cmtime = millis();
+  }
+  if(difficulty == 0){
+    if(millis() - cmtime > 5200 && !played){
+      playSong();
+      played = true;
+    }
+  }else if(difficulty == 1){
+    if(millis() - cmtime > 6700 && !played){
+      playSong();
+      played = true;
+    }
+  }
   background(backgroundcolor);
   displayScore();
   g.stringDraw();
@@ -48,16 +67,17 @@ void coreDraw(){
   if(moves.size() > 0){
     checkMove();
   }
-  count();
   if(difficulty == 0){
-    if(ctr == 0 && endCt > 0){
+    if(millis() - ctr >= 520 && endCt > 0){
       addMove();
       endCt--;
+      ctr = millis();
     }
   }else if(difficulty == 1){
-    if((ctr == 0 || ctr == 30) && endCt > 0){
+    if(millis() - ctr >= 420 && endCt > 0){
       addMove();
       endCt--;
+      ctr = millis();
     }
   }else if(difficulty == 2){
     if((ctr == 0 || ctr == 15 || ctr == 30 || ctr == 45) && endCt > 0){
@@ -129,10 +149,13 @@ void loadSong(String s){
     endCt = data.length()-1;
     sc.close();
     music = new SoundFile(this, dataPath(s + ".mp3"));
-    music.play();
     } catch(Exception e){
       e.printStackTrace();
     }
+}
+
+void playSong(){
+  music.play();
 }
 
 void addMove(){
@@ -180,14 +203,6 @@ int find(String x, ArrayList<String> arr){
     }
   }
   return -1;
-}
-
-void count(){
-  if(ctr == 60){
-    ctr = 0;
-  }else{
-    ctr++;
-  }
 }
 
 void checkMove(){
@@ -262,7 +277,6 @@ void displayScore() {
   color g = color(96,0,193);
   fill(g);
   rect(470,15,220,65);
-  PFont scoreFont = createFont("ARCADE_R.ttf",20);
   textFont(scoreFont);
   fill(0);
   text("score: ", 525,45); 
