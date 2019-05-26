@@ -25,7 +25,7 @@ void arrSetupInst(){
 }
 
 void instructSetup(){
-  instructions = "        Use WASD or the Infinity Gauntlet 2.0™\nto play the guitar.\n\nUse mouse to navigate menus.";
+  instructions = "        Use ASDF or the Infinity Gauntlet 2.0™\nto play the guitar.\n\nUse mouse to navigate menus.";
 }
 
 void arrDrawInst(){

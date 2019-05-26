@@ -32,6 +32,8 @@ int endCt;
 SoundFile music;
 int streak = 0;
 
+int mtp = 1;
+
 void coreSetup(){
   //size(700,500);
   //frameRate(60);
@@ -71,6 +73,7 @@ void coreDraw(){
   displayScore();
   g.stringDraw();
   arrowDraw();
+  multiplier();
   if(moves.size() > 0){
     checkMove();
   }
@@ -102,6 +105,26 @@ void ctrSetup(){
 void moveSetup(){
   moves = new ArrayList<String>();
   moveBtts = new ArrayList<Button>();
+}
+
+void multiplier(){
+  if(streak >= 25 && streak < 50){
+    mtp = 2;
+  }else if(streak >= 50 && streak < 100){
+    mtp = 4;
+  }else if(streak >= 100){
+    mtp = 8;
+  }else{
+    mtp = 1;
+  }
+  
+  stroke(255);
+  strokeWeight(3);
+  fill(0);
+  circle(80, 140, 100);
+  textFont(scoreFont);
+  fill(255);
+  text("x" + Integer.toString(mtp), 65, 150);
 }
 
 void arrowSetup(){
@@ -225,59 +248,65 @@ void score(int pos) {
   PFont scoreFont = createFont("ARCADE_R.ttf",20);
   textFont(scoreFont);
   ydiff = abs(moveBtts.get(pos).yPos - 462);//distance bwtn moves and moveArrs
+  int addtoscor = 0;
   if ((int)ydiff == 0) {
-    _score += 7; //flawless 
+    addtoscor = 7; //flawless 
     word = "FLAWLESS"; 
     scoreTypeContainer[0]++;
     streak++;
   }
   else if (ydiff < 5) {
-    _score += 6; //perfect
+    addtoscor = 6; //perfect
     word = "PERFECT";
     scoreTypeContainer[1]++;
     streak++;
   }
   else if (ydiff < 10) {
-    _score += 5; //excellent
+    addtoscor = 5; //excellent
     word = "EXCELLENT";
     scoreTypeContainer[2]++;
     streak++;
   }
   else if (ydiff < 15) {
-    _score += 4; //great
+    addtoscor = 4; //great
     word = "GREAT";
     scoreTypeContainer[3]++;
     streak++;
   }
   else if (ydiff < 20) {
-    _score += 3; //good 
+    addtoscor = 3; //good 
     word = "GOOD";
     scoreTypeContainer[4]++;
     streak++;
   }
   else if (ydiff < 25) {
-    _score += 2; //okay
+    addtoscor = 2; //okay
     word = "OK";
     scoreTypeContainer[5]++;
     streak=0;
   }
   else if (ydiff < 30) {
-    _score += 1; //almost
+    addtoscor = 1; //almost
     word = "ALMOST";
     scoreTypeContainer[6]++;
     streak=0;
   }
   else if (ydiff < 35) {
-    _score -= 1; //bad
+    addtoscor = -1; //bad
     word = "BAD";
     scoreTypeContainer[7]++;
     streak=0;
   }
   else if (ydiff < 50){
-    _score -= 2; //miss
+    addtoscor = -2; //miss
     word = "MISS";
     scoreTypeContainer[8]++;
     streak=0;
+  }
+  if(addtoscor > 0){
+    _score += addtoscor * mtp;
+  }else{
+    _score += addtoscor;
   }
   if(streak > scoreTypeContainer[9]) scoreTypeContainer[9] = streak;
   println(_score);
@@ -316,10 +345,7 @@ void displayScore() {
     fill(color(250,64,24)); //red
   text(word, 500, 150);
   
-  if(streak > 2)
-    fill(constrain(10*streak,0,255));
-  else
-    fill(0);
+  fill(255);
   text("Streak: ", 20,40); 
   text(streak, 70 - 10 * floor(log(_score) / log(10)),70);
 }
