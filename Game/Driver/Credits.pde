@@ -25,7 +25,7 @@ void arrSetupCreds(){
 }
 
 void creditsSetup(){
-  credits = "             Team: NauTiLus\nDevelopers: Susan Lin, Kyle Tau, Bill Ni";
+  credits = "         Infinity Gauntlet Demo\nDevelopers: Kevin, Alex, Harris, Bill Ni";
 }
 
 void arrDrawCreds(){

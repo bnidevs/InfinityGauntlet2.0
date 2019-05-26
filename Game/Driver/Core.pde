@@ -1,7 +1,7 @@
+
 import java.util.ArrayList;
 
-Button right, left, up, down;
-Button[] matchBtts; //four arrows on top left corner
+Hole[] matchHs; //four arrows on top left corner
 ArrayList<String> moves; //wasd coordination of moves
 ArrayList<Button> moveBtts;
 int ctr;
@@ -28,16 +28,15 @@ void coreSetup(){
   moveSetup();
   arrowSetup();
   arrowDraw();
-  word = ""; 
+  word = "";  
   g = new guitar_driver();
 }
 
 void coreDraw(){
   background(backgroundcolor);
   displayScore();
-  arrowDraw();
   g.stringDraw();
-  arrMove();
+  arrowDraw();
   if(moves.size() > 0){
     checkMove();
   }
@@ -70,32 +69,40 @@ void moveSetup(){
 }
 
 void arrowSetup(){
-  matchBtts = new Button[4];
+  matchHs = new Hole[4];
   
   //  ******************* RIGHT ARROW SETUP BEGIN *******************
-  matchBtts[0] = new Button(193, 450, 0);
+  matchHs[0] = new Hole(0);
   //  ******************** RIGHT ARROW SETUP END ********************
   
   //  ******************* LEFT ARROW SETUP BEGIN ********************
-  matchBtts[1] = new Button(297, 450, 1); 
+  matchHs[1] = new Hole(1);
   //  ******************** LEFT ARROW SETUP END *********************
   
   //  ********************* UP ARROW SETUP BEGIN ********************
-  matchBtts[2] = new Button(400, 450, 2);
+  matchHs[2] = new Hole(2);
   //  ********************** UP ARROW SETUP END *********************
   
   //  ******************** DOWN ARROW SETUP BEGIN *******************
-  matchBtts[3] = new Button(504, 450, 3);
+  matchHs[3] = new Hole(3);
   //  ********************* DOWN ARROW SETUP END ********************
 }
 
 void arrowDraw(){
-  for(Button b : matchBtts){
-    shape(b.buttonShape);
+  for(Hole h : matchHs){
+    h.drw();
   }
   for(Button b : moveBtts){
-    shape(b.buttonShape);
-    b.yPos+=1;
+    if(b.type == 0){
+      image(b.buttonShape, width/2-3*(b.ellOffset+b.shift)- (b.wE/2), b.yPos - b.hE, b.wE, b.hE);
+    } else if(b.type == 1) {
+      image(b.buttonShape, width/2-(b.ellOffset+b.shift)- (b.wE/2), b.yPos - b.hE, b.wE, b.hE);
+    } else if(b.type == 2) {
+      image(b.buttonShape, width/2+(b.ellOffset+b.shift)- (b.wE/2), b.yPos - b.hE, b.wE, b.hE);
+    } else{
+      image(b.buttonShape, width/2+3*(b.ellOffset+b.shift)- (b.wE/2), b.yPos - b.hE, b.wE, b.hE);
+    }
+    b.yPos+=1.3;
     b.shift+=0.063;
     b.wE+=0.06;
     b.hE+=0.04;
@@ -105,11 +112,11 @@ void arrowDraw(){
 void addMove(){
   double decision = Math.random();
   if(decision < 0.25){
-    moves.add("w");
+    moves.add("a");
     Button temp = new Button(width/2-3*(ellOffset+shift), 0, 0);
     moveBtts.add(temp);
   }else if(decision < 0.5){
-    moves.add("a");
+    moves.add("w");
     Button temp = new Button(width/2-(ellOffset+shift), 0, 1);
     moveBtts.add(temp);
   }else if(decision < 0.75){
@@ -124,7 +131,7 @@ void addMove(){
 }
 
 void removeMove(int pos){
-  score();
+  score(pos);
   moves.remove(pos);
   moveBtts.remove(pos);
 }
@@ -133,13 +140,6 @@ void keyPressed(){
   int pos = find(key + "", moves);
   if(pos != -1){
     removeMove(pos);
-  }
-}
-
-void arrMove(){
-  int len = moveBtts.size();
-  for(int i = 0; i < len; i++){
-    moveBtts.get(i).moveDown();
   }
 }
 
@@ -164,34 +164,15 @@ void count(){
 }
 
 void checkMove(){
-  if(moves.get(0) == "w"){
-    if(moveBtts.get(0).ycor < -45){
-      removeMove(0);
-    }
-  }else if(moves.get(0) == "a"){
-    if(moveBtts.get(0).ycor < -45){
-      removeMove(0);
-    }
-  }else if(moves.get(0) == "s"){
-    if(moveBtts.get(0).ycor < -45){
-      removeMove(0);
-    }
-  }else{
-    if(moveBtts.get(0).ycor < -45){
-      removeMove(0);
-    }
+  if(moveBtts.get(0).ycor > 510){
+    removeMove(0);
   }
 }
-void score() {
+void score(int pos) {
   float ydiff;
   PFont scoreFont = createFont("ARCADE_R.ttf",20);
   textFont(scoreFont);
-  if (moves.get(0) == "w" || moves.get(0) == "s") {
-    ydiff = abs(moveBtts.get(0).ycor - 52);//distance bwtn moves and moveArrs 
-}
-  else {
-    ydiff = abs(moveBtts.get(0).ycor - 50);//distance bwtn moves and moveArrs
-  }
+  ydiff = abs(moveBtts.get(pos).yPos - 462);//distance bwtn moves and moveArrs
   if ((int)ydiff == 0) {
     _score += 7; //flawless 
     word = "FLAWLESS"; 

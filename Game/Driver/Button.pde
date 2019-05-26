@@ -1,11 +1,10 @@
 class Button {
-
-  PShape buttonShape;
+  PImage buttonShape;
   float ycor;
   float xcor;
   
-  int offset = 0;
-  int ellOffset = 0;
+  int offset = width / 16;
+  int ellOffset = width / 32;
   int yPos = 0;
   float wE = 30;
   float hE = 20;
@@ -13,36 +12,22 @@ class Button {
   
   int type = 0;
 
-  public Button(float x, float y, int id) {
+  public Button(float x, float y, int id) { //id = 0 blue; id = 1 yellow ; id = 2 green
     xcor = x;
     ycor = y;
+    type = id;
     buttonShape = makeButton(); 
-    setFS();
   }
 
-  PShape makeButton() {
-    return createShape(ELLIPSE, xcor, ycor, 50, 30);
-  }
-
-  void setFS() {
-    buttonShape.setFill(220);
-    buttonShape.setStroke(235);
-  }
-
-  void tempSet() {
-    buttonShape.setFill(0);
-    buttonShape.translate(0, -600);
-  }
-
-  void moveDown() {
+  PImage makeButton() {
     if(type == 0){
-      buttonShape = createShape(ELLIPSE, width/2-3*(ellOffset+shift), yPos, wE, hE);
-    }else if(type == 1){
-      buttonShape = createShape(ELLIPSE, width/2-(ellOffset+shift), yPos, wE, hE);
-    }else if(type == 2){
-      buttonShape = createShape(ELLIPSE, width/2+(ellOffset+shift), yPos, wE, hE);
-    }else{
-      buttonShape = createShape(ELLIPSE, width/2+3*(ellOffset+shift), yPos, wE, hE);
+      return loadImage("g.png");
+    } else if(type == 1) {
+      return loadImage("r.png");
+    } else if(type == 2) {
+      return loadImage("y.png");
+    } else {
+      return loadImage("b.png");
     }
   }
 }
