@@ -1,4 +1,4 @@
-
+import processing.sound.*;
 import java.util.ArrayList;
 import java.io.File;
 import java.util.Scanner;
@@ -25,7 +25,7 @@ double speed = 1.3;
 
 int difficulty;
 int endCt;
-
+SoundFile music;
 int streak = 0;
 
 void coreSetup(){
@@ -128,6 +128,8 @@ void loadSong(String s){
     }
     endCt = data.length()-1;
     sc.close();
+    music = new SoundFile(this, dataPath(s + ".mp3"));
+    music.play();
     } catch(Exception e){
       e.printStackTrace();
     }
