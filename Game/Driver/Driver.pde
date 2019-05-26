@@ -9,7 +9,7 @@ int status = MENU;
 
 void setup(){
   size(700,500);
-  
+  textAlign(LEFT);
   // MENU SETUP
   buttonSetup();
   colorSetup();
@@ -45,6 +45,7 @@ void draw(){
   
   //MENU DRAW
   if(status == MENU){
+    textAlign(LEFT);
     buttonHover();
     buttonDraw();
     txtDraw();

@@ -1,7 +1,8 @@
 PShape backArrowCreds;
 color arrColorCreds, arrOutlineCreds;
 
-String credits;
+String credits1;
+String credits2;
 
 void arrSetupCreds(){
   arrColorCreds = color(96,0,193);
@@ -25,7 +26,8 @@ void arrSetupCreds(){
 }
 
 void creditsSetup(){
-  credits = "         Infinity Gauntlet Demo\nDevelopers: Kevin, Alex, Harris, Bill Ni";
+  credits1 = "Infinity Gauntlet Demo";
+  credits2 = "Developers: Bill   Ni\n            Kevin  Cheng\n            Harris Miller\n            Alex   Liu";
 }
 
 void arrDrawCreds(){
@@ -43,5 +45,9 @@ void arrDrawCreds(){
 void creditsDraw(){
   textFont(buttonFont); //see menu for font type
   fill(priTextColor);
-  text(credits,150,230);
+  textSize(14);
+  textAlign(CENTER);
+  text(credits1,width/2,200);
+  textAlign(LEFT);
+  text(credits2,190,250);
 }

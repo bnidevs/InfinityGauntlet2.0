@@ -133,7 +133,7 @@ void diffMenuTitleSetup(){
 }
 
 void diffDescSetup(){
-  ezDesc = "One arrow per second, 50 arrows";
-  medDesc = "Two arrows per second, 150 arrows";
-  hrdDesc = "Four arrows per second, 250 arrows";
+  ezDesc = "Eye of the Tiger, X BPM";
+  medDesc = "Iron Man, Y BPM";
+  hrdDesc = "???, Z BPM";
 }
