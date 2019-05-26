@@ -7,7 +7,7 @@
  
  
  
-s
+d
  
  
  
@@ -24,7 +24,7 @@ s
  
  
  
-s
+d
  
  
  
@@ -41,7 +41,7 @@ s
  
  
  
-s
+d
  
  
  
@@ -56,247 +56,215 @@ s
  
 a
  
-s
- 
-s
-d
 d
  
 d
-d
-d
-s
-s
-d
-d
+f
+f
  
-a
- 
-s
- 
-s
+f
+f
+f
 d
 d
-d
-d
-d
-s
-s
-d
-d
+f
+f
  
 a
  
-s
- 
-s
-d
 d
  
 d
+f
+f
+f
+f
+f
 d
 d
-s
-s
-d
-d
-a
- 
-s
- 
-s
-d
-d
-d
-d
-d
-s
-s
-d
-d
+f
+f
  
 a
  
-s
- 
-s
-d
 d
  
 d
+f
+f
+ 
+f
+f
+f
 d
 d
-s
-s
+f
+f
+a
+ 
 d
+ 
+d
+f
+f
+f
+f
+f
+d
+d
+f
+f
+ 
+a
+ 
+d
+ 
+d
+f
+f
+ 
+f
+f
+f
+d
+d
+f
+f
+a
+ 
+d
+ 
+d
+f
+f
+ 
+f
+f
+f
+d
+d
+f
+f
+a
+ 
+d
+ 
+d
+f
+f
+ 
+f
+f
+f
+d
+d
+f
+f
+ 
+d
+ 
+f
+ 
+d
+ 
+d
+a
+a
+a
 d
 a
  
-s
- 
-s
-d
 d
  
-d
-d
-d
-s
-s
-d
-d
-a
+f
  
-s
- 
-s
-d
 d
  
 d
-d
-d
-s
-s
-d
-d
- 
-s
- 
-d
- 
-s
- 
-s
-a
-a
-a
-s
-a
- 
-s
- 
-d
- 
-s
- 
-s
-a
-a
-a
- 
-s
-a
- 
-s
- 
-d
- 
-s
- 
-s
 a
 a
 a
  
- 
- 
- 
- 
-a
- 
-s
- 
-s
-d
-d
- 
-d
-d
-d
-s
-s
-d
-d
- 
-a
- 
-s
- 
-s
-d
-d
-d
-d
-d
-s
-s
-d
 d
 a
  
-s
- 
-s
-d
 d
  
-d
-d
-d
-s
-s
-d
+f
+ 
 d
  
+d
 a
- 
-s
- 
-s
-d
-d
-d
-d
-d
-s
-s
-d
-d
- 
-d
- 
- 
- 
- 
- 
- 
- 
-s
- 
- 
+a
+a
  
  
  
  
  
 a
-a
-a
- 
-s
- 
-d
- 
-a
-a
-a
- 
-s
  
 d
  
 d
+f
+f
+ 
+f
+f
+f
+d
+d
+f
+f
+ 
+a
+ 
+d
+ 
+d
+f
+f
+f
+f
+f
+d
+d
+f
+f
+a
+ 
+d
+ 
+d
+f
+f
+ 
+f
+f
+f
+d
+d
+f
+f
+ 
+a
+ 
+d
+ 
+d
+f
+f
+f
+f
+f
+d
+d
+f
+f
+ 
+f
  
  
  
@@ -304,7 +272,7 @@ d
  
  
  
-s
+d
  
  
  
@@ -316,75 +284,27 @@ a
 a
 a
  
-s
+d
+ 
+f
+ 
+a
+a
+a
  
 d
  
-a
-a
-a
+f
  
-s
+f
+ 
+ 
+ 
+ 
+ 
+ 
  
 d
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
  
  
  
@@ -396,105 +316,185 @@ a
 a
 a
  
-s
- 
 d
+ 
+f
  
 a
 a
 a
  
-s
- 
 d
+ 
+f
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
  
 a
 a
 a
  
-s
- 
 d
+ 
+f
  
 a
 a
 a
  
-s
+d
+ 
+f
+ 
+a
+a
+a
  
 d
+ 
+f
+ 
+a
+a
+a
+ 
+d
+ 
+f
  
 a
  
-s
+d
  
-s
+d
+f
+f
+f
+f
+f
 d
 d
-d
-d
-d
-s
-s
-d
-d
+f
+f
  
 a
  
-s
- 
-s
-d
 d
  
 d
+f
+f
+ 
+f
+f
+f
 d
 d
-s
-s
-d
-d
- 
-s
- 
- 
-d
- 
-s
- 
-s
-a
- 
-a
- 
-s
-a
- 
-s
-s
- 
+f
+f
  
 d
  
-s
  
-s
+f
+ 
+d
+ 
+d
 a
  
 a
  
-s
+d
 a
  
-s
-s
+d
+d
  
+ 
+f
  
 d
  
-s
+d
+a
  
-s
+a
+ 
+d
+a
+ 
+d
+d
+ 
+ 
+f
+ 
+d
+ 
+d
 a
 a
 a
