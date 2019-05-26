@@ -49,19 +49,16 @@ void coreDraw(){
   if(difficulty == 0){
     if(ctr == 0 && endCt > 0){
       addMove();
-      //loadSong("EyeOfTheTiger");
       endCt--;
     }
   }else if(difficulty == 1){
     if((ctr == 0 || ctr == 30) && endCt > 0){
       addMove();
-      //loadSong("IronMan");
       endCt--;
     }
   }else if(difficulty == 2){
     if((ctr == 0 || ctr == 15 || ctr == 30 || ctr == 45) && endCt > 0){
       addMove();
-      //loadSong("???");
       endCt--;
     }
   }
@@ -128,7 +125,6 @@ void loadSong(String s){
     }
     endCt = data.length()-1;
     sc.close();
-    println(data);
     } catch(Exception e){
       e.printStackTrace();
     }
