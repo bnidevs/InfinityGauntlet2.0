@@ -60,6 +60,12 @@ void coreDraw(){
       played = true;
     }
   }
+  else if(difficulty == 2){
+    if(millis() - cmtime > 5000 && !played){
+      playSong();
+      played = true;
+    }
+  }
   background(backgroundcolor);
   displayScore();
   g.stringDraw();
@@ -80,9 +86,10 @@ void coreDraw(){
       ctr = millis();
     }
   }else if(difficulty == 2){
-    if((ctr == 0 || ctr == 15 || ctr == 30 || ctr == 45) && endCt > 0){
+    if(millis() - ctr >= 320 && endCt > 0){
       addMove();
       endCt--;
+      ctr = millis();
     }
   }
 }

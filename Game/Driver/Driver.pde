@@ -137,6 +137,7 @@ void mouseClicked(){
       status = PLAY;
     }else if(mouseY > 300 && mouseY < 320){
       difficulty = 2;
+      loadSong("ThroughTheFireAndFlames");
       status = PLAY;
     }
   }
