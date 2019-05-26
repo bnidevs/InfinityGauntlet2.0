@@ -107,15 +107,17 @@ void mouseClicked(){
   if(status == DIFFMENU && mouseX > 130 && mouseX < 330){
     if(mouseY > 240 && mouseY < 260){
       difficulty = 0;
-      endCt = 50;
+      loadSong("EyeOfTheTiger");
+      //endCt = 50;
       status = PLAY;
     }else if(mouseY > 270 && mouseY < 290){
       difficulty = 1;
-      endCt = 150;
+      loadSong("IronMan");
+      //endCt = 150;
       status = PLAY;
     }else if(mouseY > 300 && mouseY < 320){
       difficulty = 2;
-      endCt = 250;
+      //endCt = 250;
       status = PLAY;
     }
   }

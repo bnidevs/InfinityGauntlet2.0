@@ -1,5 +1,7 @@
 
 import java.util.ArrayList;
+import java.io.File;
+import java.util.Scanner;
 
 Hole[] matchHs; //four arrows on top left corner
 ArrayList<String> moves; //wasd coordination of moves
@@ -9,6 +11,9 @@ int _score;
 color backgroundcolor;
 String word;
 guitar_driver g;
+int bpm;
+String data;
+int pos = 1;
 
 int offset = width / 16;
 int ellOffset = width / 32;
@@ -44,16 +49,19 @@ void coreDraw(){
   if(difficulty == 0){
     if(ctr == 0 && endCt > 0){
       addMove();
+      //loadSong("EyeOfTheTiger");
       endCt--;
     }
   }else if(difficulty == 1){
     if((ctr == 0 || ctr == 30) && endCt > 0){
       addMove();
+      //loadSong("IronMan");
       endCt--;
     }
   }else if(difficulty == 2){
     if((ctr == 0 || ctr == 15 || ctr == 30 || ctr == 45) && endCt > 0){
       addMove();
+      //loadSong("???");
       endCt--;
     }
   }
@@ -109,21 +117,39 @@ void arrowDraw(){
   }
 }
 
+void loadSong(String s){
+  try {
+    File f = new File(dataPath(s + ".txt"));
+    Scanner sc = new Scanner(f);
+    bpm = Integer.parseInt(sc.nextLine());
+    data = "";
+    while (sc.hasNextLine()) {
+      data += sc.nextLine();
+    }
+    endCt = data.length()-1;
+    sc.close();
+    println(data);
+    } catch(Exception e){
+      e.printStackTrace();
+    }
+}
+
 void addMove(){
-  double decision = Math.random();
-  if(decision < 0.25){
+  String s = data.substring(pos,pos+1);
+  pos++;
+  if(s.equals("a")){
     moves.add("a");
     Button temp = new Button(width/2-3*(ellOffset+shift), 0, 0);
     moveBtts.add(temp);
-  }else if(decision < 0.5){
+  }else if(s.equals("w")){
     moves.add("w");
     Button temp = new Button(width/2-(ellOffset+shift), 0, 1);
     moveBtts.add(temp);
-  }else if(decision < 0.75){
+  }else if(s.equals("s")){
     moves.add("s");
     Button temp = new Button(width/2+(ellOffset+shift), 0, 2);
     moveBtts.add(temp);
-  }else{
+  }else if(s.equals("d")){
     moves.add("d");
     Button temp = new Button(width/2+3*(ellOffset+shift), 0, 3);
     moveBtts.add(temp);
