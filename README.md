@@ -1,6 +1,8 @@
 # InfinityGauntlet2.0
 Assistive Controller Software for Game Compatibility
 
+### [Devpost](https://devpost.com/software/infinity-gauntlet-2-0)
+
 ### Contributors
 Bill Ni - [bnidevs](https://github.com/bnidevs/) <br>
 Kevin Cheng - [kchengdevs](https://github.com/kchengdevs/) <br>
