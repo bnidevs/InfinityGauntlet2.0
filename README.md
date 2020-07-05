@@ -11,7 +11,7 @@ Harris Miller - [rellimsirrah](https://github.com/rellimsirrah/) <br>
 
 ### Video Demo
 
-<iframe width="50vw" src="https://www.youtube.com/embed/oq99dLImzdk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+[![](http://img.youtube.com/vi/oq99dLImzdk/0.jpg)](http://www.youtube.com/watch?v=oq99dLImzdk "Video Demo")
 
 ### Circuit Diagram
 <img src="https://raw.githubusercontent.com/bnidevs/InfinityGauntlet2.0/master/circuitdiagram.png" width="100%">
